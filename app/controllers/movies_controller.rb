@@ -27,9 +27,10 @@ class MoviesController < ApplicationController
     
     if params[:sort]
        @sort=params[:sort]
-    else
+    elsif session[:sort]
        @sort=session[:sort]
        redirect=true
+    else
     end
 
     if redirect
